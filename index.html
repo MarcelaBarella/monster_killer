@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Monster Killer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="panel health-points">
+            <div class="health-point">
+                <h2>Player</h2>
+                <div class="health-bar">
+                    <div class="health"
+                        :class="{danger: playerHealth < 20}"
+                        :style="{width: playerHealth}">
+                    </div>
+                </div>
+                <div>{{ playerHealth}}%</div>
+            </div>
+            <div class="health-point">
+                <h2>Monster</h2>
+                <div class="health-bar">
+                    <div class="health"
+                    :class="{danger: monsterHealth < 20}"
+                    :style="{width: monsterHealth}">
+                </div>
+                </div>
+                <div>{{ monsterHealth}}%</div>
+            </div>
+        </div>
+        <div class="panel results" v-if="hasResult">
+            <!-- fix this logic -->
+            <div class="loser" v-if="playerHealth === 0">Oh noes, you lose :(</div>
+            <div class="winner" v-else>Congratulations you win :)</div>
+            
+        </div>
+        <div class="panel controlls ">
+            <template v-if="running">
+                <button @click="attack(false)" 
+                class="btn attack">Attack</button>
+                <button @click="attack(true)"
+                class="btn ult">Ult</button>
+                <button @click="healAndDamage"
+                class="btn heal">Heal</button>
+                <button @click="running = false" class="btn give-up">Give Up</button>
+            </template>
+            <button  @click="startGame" v-else class="btn new-game">Start</button>
+        </div>      
+        <div class="panel logs">4</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
