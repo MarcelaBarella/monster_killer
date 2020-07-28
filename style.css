@@ -30,7 +30,7 @@ html {
     align-items: center;
 }
 
-.health-point h2{
+.health-point h2 {
     font-weight: 300;
     font-size: 1.6rem;
 }
@@ -53,7 +53,7 @@ html {
     background-color: rgb(153, 0, 0);
 }
 
-/* Results Relatec */
+/* Results Related */
 
 .results {
     display: flex;
@@ -107,4 +107,35 @@ html {
 .give-up {
     background-color: rgb(140, 140, 140);
     color: rgb(242, 242, 242);
+}
+
+/* Logs Related */
+
+.logs ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.player {
+    background-color: rgb(133, 133, 173);
+    color: rgb(51, 51, 77);
+}
+
+.monster {
+    background-color: rgb(0, 153, 153);
+    color: rgb(0, 51, 51);
 }
